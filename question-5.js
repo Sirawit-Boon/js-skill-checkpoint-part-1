@@ -51,7 +51,7 @@ function calculateTotalPrice(products, promotionCode) {
     discount += totalPrice * 0.2;
     totalPaid += totalPrice - discount;
   } else if (promotionCode === "SALE50") {
-    discount += totalPrice * 0.5
+    discount += totalPrice * 0.5;
     totalPaid += totalPrice - discount;
   } else {
     totalPaid += totalPrice;
