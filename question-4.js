@@ -1,6 +1,6 @@
 // Question #4
 const inventory = [
-  { name: "Apple", price: 35, quantity: 40 },
+  { name: "Apple", price: 35, quantity: 100 },
   { name: "Banana", price: 10, quantity: 50 },
   { name: "Orange", price: 30, quantity: 60 },
 ];
@@ -15,9 +15,6 @@ function findMinQuantity(inventory) {
   }
   return minQuantity;
 }
-
-// console.log(findMinQuantity(inventory));
-// console.log(`สินค้าที่มีจำนวนต่ำที่สุดในคลังสินค้าคือ ${findMinQuantity(inventory)} ซึ่งมี ${findMinQuantity(inventory)} ชิ้น`)
 
 function findMinProduct(inventory) {
   let minProduct = { name: inventory[0].name, quantity: inventory[0].quantity };
