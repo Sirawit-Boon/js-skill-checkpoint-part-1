@@ -19,3 +19,46 @@ const products = [
 
 const promotionCode = "";
 // เริ่มเขียนโค้ดตรงนี้
+// function calculateTotalPrice(products, promotionCode) {
+//   let totalPrice = 0;
+//   let totalPaid = 0;
+//   for (let i = 0; i < products.length; i++) {
+//     totalPrice += products[i].price * products[i].quantity;
+//   }
+//   for (let i = 0; i < products.length; i++) {
+//     if (promotionCode === "SALE20") {
+//       totalPaid += totalPrice * 0.2
+//       console.log("***", totalPaid)
+//     } else if (promotionCode === "SALE50") {
+//       totalPaid += totalPrice * 0.5
+//     } else {
+//       totalPaid += totalPrice;
+//     }
+//   }
+//   return totalPaid;
+// }
+
+// console.log(calculateTotalPrice(products, "SALE20"));
+
+function calculateTotalPrice(products, promotionCode) {
+  let totalPrice = 0;
+  let discount = 0;
+  let totalPaid = 0;
+  for (let i = 0; i < products.length; i++) {
+    totalPrice += products[i].price * products[i].quantity;
+  }
+  if (promotionCode === "SALE20") {
+    discount += totalPrice * 0.2;
+    totalPaid += totalPrice - discount;
+  } else if (promotionCode === "SALE50") {
+    discount += totalPrice * 0.5
+    totalPaid += totalPrice - discount;
+  } else {
+    totalPaid += totalPrice;
+  }
+  return totalPaid;
+}
+
+console.log(calculateTotalPrice(products, ""));
+console.log(calculateTotalPrice(products, "SALE20"));
+console.log(calculateTotalPrice(products, "SALE50"));
